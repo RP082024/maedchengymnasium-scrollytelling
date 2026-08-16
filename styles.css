@@ -930,6 +930,11 @@ td {
   }
 }
 
+a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
+
 /* ==========================================================
    15 — BARRIEREFREIHEIT UND REDUZIERTE BEWEGUNG
    ========================================================== */
