@@ -1,0 +1,946 @@
+/* ==========================================================
+   ONEPAGER — VOLLSTÄNDIGE CSS-ERSATZFASSUNG
+
+   INHALTSVERZEICHNIS
+
+   01 — Lokale Schriftdateien
+   02 — Designvariablen
+   03 — Quarto-Reset und Seitenbreite
+   04 — Hero
+   05 — Hauptabschnitte und Typografie
+   06 — Bilder und Bildinformationen
+   07 — Callouts
+   08 — Karten, Tabellen und Textfelder
+   09 — Interaktive Einbettungen
+   10 — Biografie-Quellenleiste
+   11 — Beteiligung, Kontakt und Rechtsbereich
+   12 — Optionale Fortschrittsnavigation
+   13 — Tablet
+   14 — Mobil
+   15 — Barrierefreiheit und reduzierte Bewegung
+
+   Es werden bewusst KEINE Schatten verwendet.
+   ========================================================== */
+
+/* ==========================================================
+   01 — LOKALE SCHRIFTDATEIEN
+
+   Nur hier ändern, falls die tatsächlichen Dateinamen im
+   Ordner fonts/ anders lauten.
+   ========================================================== */
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* ==========================================================
+   02 — DESIGNVARIABLEN
+
+   Farb- oder Breitenänderungen möglichst zuerst hier vornehmen.
+   ========================================================== */
+
+:root {
+  --ink: #272727;
+  --muted: #69645e;
+  --paper: #fbfaf7;
+  --warm-paper: #f3efe7;
+  --white: #ffffff;
+  --line: #d5cfc4;
+  --accent: #8f3f32;
+  --accent-dark: #713128;
+
+  --evidence: #765632;
+  --evidence-bg: #f6eee2;
+  --method: #3f616b;
+  --method-bg: #e8f0f2;
+  --explore: #53663b;
+  --explore-bg: #edf2e7;
+
+  --reading-width: 780px;
+  --wide-width: 1180px;
+  --section-space: clamp(5rem, 10vw, 9rem);
+}
+
+/* ==========================================================
+   03 — QUARTO-RESET UND SEITENBREITE
+
+   Diese Regeln heben die üblichen Quarto-Seitenränder auf.
+   Der Hero kann dadurch wirklich von Browserkante zu
+   Browserkante reichen.
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+button,
+input,
+textarea,
+select,
+.navbar,
+.sidebar,
+.callout,
+.figure-caption {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+#quarto-content,
+#quarto-content.page-columns,
+.quarto-container,
+.quarto-container.page-columns,
+main,
+main.content {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#quarto-document-content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent-dark);
+  text-underline-offset: .16em;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+}
+
+/* Remove residual Quarto space above the hero */
+#quarto-content,
+#quarto-document-content,
+.quarto-container,
+main.content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#title-block-header {
+  display: none !important;
+}
+
+/* ==========================================================
+   04 — HERO
+
+   Bilddatei hier ändern:
+   url("images/DATEINAME.jpg")
+
+   Desktop-Bildausschnitt ändern:
+   background-position: center 38%;
+
+   Der mobile Bildausschnitt wird weiter unten separat gesetzt.
+   ========================================================== */
+
+.story-hero {
+  position: relative;
+  width: 100%;
+  min-height: min(108svh, 1120px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #292929;
+  isolation: isolate;
+}
+
+.story-hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(to top,
+      rgba(0, 0, 0, .80) 0%,
+      rgba(0, 0, 0, .30) 52%,
+      rgba(0, 0, 0, .08) 100%),
+    url("images/k_01008_hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 50%;
+  filter: saturate(.82) contrast(1.03);
+}
+
+.story-hero__overlay {
+  position: relative;
+  z-index: 1;
+  width: min(1040px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: clamp(5rem, 12vh, 9rem) 0 clamp(3rem, 8vh, 6rem);
+  color: var(--white);
+}
+
+.story-kicker {
+  margin: 0 0 1.4rem .55rem;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.story-hero h1 {
+  width: 100%;
+  max-width: 11ch;
+  margin: 0;
+  color: var(--white);
+  font-family: "Open Sans", sans-serif !important;
+  font-size: clamp(3.8rem, 8vw, 8rem);
+  font-weight: 600;
+  line-height: .92;
+  letter-spacing: -.055em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.story-hero__lead {
+  width: 100%;
+  max-width: 52rem;
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.08rem, 1.7vw, 1.4rem);
+  line-height: 1.55;
+}
+
+/* ==========================================================
+   05 — HAUPTABSCHNITTE UND TYPOGRAFIE
+
+   Lesebreite wird über --reading-width gesteuert.
+   ========================================================== */
+
+.story-section {
+  position: relative;
+  width: 100%;
+  min-height: 68vh;
+  padding: var(--section-space) max(1.25rem, calc((100vw - var(--reading-width)) / 2));
+  border-top: 1px solid var(--line);
+}
+
+.story-section:nth-of-type(odd) {
+  background: var(--warm-paper);
+}
+
+.story-section:nth-of-type(even) {
+  background: var(--paper);
+}
+
+
+.story-section>h2 {
+  max-width: var(--reading-width);
+  margin: 0 auto 2rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.story-section>p,
+.story-section>h3,
+.story-section>ul,
+.story-section>ol,
+.story-section>blockquote,
+.story-section>table,
+.story-section>.callout,
+.story-section>.process-line,
+.story-section>.output-strip,
+.story-section>.closing-statement,
+.story-section>.participation-panel {
+  max-width: var(--reading-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-section>p:first-of-type {
+  font-size: clamp(1.18rem, 2vw, 1.5rem);
+  line-height: 1.65;
+}
+
+.story-section h3 {
+  margin-top: 0;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  line-height: 1.25;
+}
+
+/* ==========================================================
+   06 — BILDER UND BILDINFORMATIONEN
+
+   Das i verwendet HTML <details> und benötigt kein JavaScript.
+   ========================================================== */
+
+.story-figure {
+  width: min(var(--wide-width), 100%);
+  margin: 3rem auto;
+}
+
+.image-frame {
+  position: relative;
+  width: 100%;
+}
+
+.image-frame>img,
+.story-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.figure-caption,
+figcaption {
+  margin-top: .65rem;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.image-info {
+  position: absolute;
+  right: .75rem;
+  bottom: .75rem;
+  z-index: 4;
+}
+
+.image-info summary {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 50%;
+  color: var(--white);
+  background: rgba(20, 20, 20, .72);
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.image-info summary::-webkit-details-marker {
+  display: none;
+}
+
+.image-info>div {
+  position: absolute;
+  right: 0;
+  bottom: 2.5rem;
+  width: min(21rem, calc(100vw - 2rem));
+  padding: .85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, .5);
+  color: var(--white);
+  background: rgba(25, 25, 25, .94);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.image-info--hero {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+/* ==========================================================
+   07 — CALLOUTS
+
+   Drei frei verwendbare Typen:
+   evidence = Quelle / Beleg
+   method   = Methode / Entscheidung
+   explore  = Vertiefung / Anwendung
+   ========================================================== */
+
+.callout.callout-evidence,
+.callout.callout-method,
+.callout.callout-explore {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  border: 0 !important;
+  border-left: .42rem solid !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+.callout.callout-evidence {
+  border-left-color: var(--evidence) !important;
+  background: var(--evidence-bg) !important;
+}
+
+.callout.callout-method {
+  border-left-color: var(--method) !important;
+  background: var(--method-bg) !important;
+}
+
+.callout.callout-explore {
+  border-left-color: var(--explore) !important;
+  background: var(--explore-bg) !important;
+}
+
+.callout.callout-evidence .callout-header,
+.callout.callout-evidence .callout-body-container {
+  background: var(--evidence-bg) !important;
+}
+
+.callout.callout-method .callout-header,
+.callout.callout-method .callout-body-container {
+  background: var(--method-bg) !important;
+}
+
+.callout.callout-explore .callout-header,
+.callout.callout-explore .callout-body-container {
+  background: var(--explore-bg) !important;
+}
+
+.callout .callout-header {
+  padding: .9rem 1rem;
+}
+
+.callout .callout-body-container {
+  padding: 1rem 1.15rem 1.25rem;
+}
+
+.callout .callout-title-container {
+  font-weight: 700;
+}
+
+.callout img {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================
+   08 — KARTEN, TABELLEN UND TEXTFELDER
+   ========================================================== */
+
+.process-line,
+.output-strip,
+.closing-statement,
+.participation-panel {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-left: .35rem solid var(--accent);
+  background: rgba(255, 255, 255, .74);
+  font-size: 1.08rem;
+}
+
+.finding-grid {
+  width: min(var(--wide-width), 100%);
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.finding-card {
+  min-width: 0;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .82);
+}
+
+.finding-card> :last-child {
+  margin-bottom: 0;
+}
+
+.table-responsive,
+.callout table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .94rem;
+}
+
+th,
+td {
+  padding: .7rem .8rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ==========================================================
+   09 — INTERAKTIVE EINBETTUNGEN
+
+   lazy-embed--wide    = breite Anwendung
+   lazy-embed--reading = Lesebreite
+   ========================================================== */
+
+.lazy-embed {
+  position: relative;
+  width: 100%;
+  margin: 3rem auto;
+  border: 1px solid var(--line);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.lazy-embed--wide {
+  width: min(var(--wide-width), 100%);
+}
+
+.lazy-embed--reading {
+  width: min(var(--reading-width), 100%);
+}
+
+.lazy-embed>img {
+  width: 100%;
+  height: auto;
+}
+
+.lazy-embed__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .8rem;
+  padding: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.load-embed,
+.story-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: .72rem 1.1rem;
+  border: 1px solid var(--accent-dark);
+  border-radius: 0;
+  color: var(--white);
+  background: var(--accent-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.load-embed:hover,
+.load-embed:focus-visible,
+.story-button:hover,
+.story-button:focus-visible {
+  color: var(--accent-dark);
+  background: transparent;
+}
+
+.embedded-application {
+  display: block;
+  width: 100%;
+  min-height: min(78vh, 850px);
+  border: 0;
+}
+
+/* ==========================================================
+   10 — BIOGRAFIE-QUELLENLEISTE
+
+   Desktop: horizontale Leiste
+   Mobil: per Finger wischbar
+   ========================================================== */
+
+.source-rail {
+  width: min(var(--wide-width), 100%);
+  margin: 3rem auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 34%);
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0 0 1rem;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+}
+
+.source-rail figure {
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+/* Erstes Bild der Source-Rail: Infofenster nach rechts öffnen */
+.source-rail figure:first-of-type .image-info>div {
+  left: 0 !important;
+  right: auto !important;
+}
+
+.source-rail img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--warm-paper);
+}
+
+/* ==========================================================
+   11 — BETEILIGUNG, KONTAKT UND RECHTSBEREICH
+
+   Der Rechtsbereich ist zugleich der sichtbare Seitenabschluss.
+   ========================================================== */
+
+.participation-panel {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.participation-panel .story-button {
+  margin-top: .75rem;
+}
+
+.legal-footer {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 7rem) 1.25rem 2rem;
+  border-top: .35rem solid var(--accent);
+  color: #ede9e2;
+  background: #292827;
+}
+
+.legal-footer__inner {
+  width: min(var(--wide-width), 100%);
+  margin: 0 auto;
+}
+
+.legal-footer__intro {
+  max-width: var(--reading-width);
+  margin-bottom: 3.5rem;
+}
+
+.legal-footer h2,
+.legal-footer h3 {
+  color: var(--white);
+}
+
+.legal-footer h2 {
+  margin-top: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.08;
+}
+
+.legal-footer h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.legal-footer a {
+  color: var(--white);
+}
+
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.legal-grid>div {
+  min-width: 0;
+}
+
+.legal-footer__end {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  border-top: 1px solid rgba(255, 255, 255, .25);
+  color: #cfc9c0;
+  font-size: .88rem;
+}
+
+/* ==========================================================
+   12 — OPTIONALE FORTSCHRITTSNAVIGATION
+
+   Ohne .story-progress im index.qmd haben diese Regeln keine
+   sichtbare Wirkung.
+   ========================================================== */
+
+.story-progress {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: .8rem;
+  width: 9rem;
+  transform: translateY(-50%);
+  font-size: .74rem;
+}
+
+.story-progress[hidden] {
+  display: none;
+}
+
+.story-progress ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story-progress a {
+  display: grid;
+  grid-template-columns: 1.55rem 1fr;
+  align-items: center;
+  gap: .45rem;
+  padding: .3rem;
+  color: var(--muted);
+  text-decoration: none;
+  opacity: .7;
+}
+
+.story-progress a:hover,
+.story-progress a:focus-visible,
+.story-progress a.active {
+  opacity: 1;
+}
+
+.story-progress a span {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.story-progress a.active span {
+  color: var(--white);
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.story-progress__line {
+  position: absolute;
+  z-index: -1;
+  top: .9rem;
+  bottom: .9rem;
+  left: 1.02rem;
+  width: 2px;
+  background: var(--line);
+}
+
+.story-progress__fill {
+  width: 100%;
+  height: var(--story-progress, 0%);
+  background: var(--accent);
+}
+
+/* ==========================================================
+   13 — TABLET
+   ========================================================== */
+
+@media (max-width: 1050px) {
+  .finding-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .source-rail {
+    grid-auto-columns: minmax(260px, 48%);
+  }
+
+  .legal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .legal-grid>div:last-child {
+    grid-column: 1 / -1;
+    max-width: var(--reading-width);
+  }
+
+  .story-progress {
+    width: 2.5rem;
+  }
+
+  .story-progress strong {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   14 — MOBIL
+
+   Wichtigster Wert für den mobilen Bildausschnitt:
+   background-position: 30% center;
+
+   Kleinerer Prozentwert = Bild weiter nach links
+   Größerer Prozentwert  = Bild weiter nach rechts
+   ========================================================== */
+
+@media (max-width: 760px) {
+  .story-hero {
+    min-height: 100svh;
+  }
+
+  .story-hero__image {
+    background-position: 30% center;
+  }
+
+  .story-hero__overlay {
+    width: 100%;
+    margin: 0;
+    padding: 6.5rem 1.25rem 3.25rem;
+  }
+
+  .story-kicker {
+    margin-bottom: 1.1rem;
+    font-size: .74rem;
+    letter-spacing: .13em;
+  }
+
+  .story-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.75rem, 13vw, 4.1rem);
+    line-height: .95;
+    letter-spacing: -.045em;
+  }
+
+  .story-hero__lead {
+    max-width: 34rem;
+    margin-top: 1.15rem;
+    font-size: clamp(1rem, 4.3vw, 1.18rem);
+    line-height: 1.5;
+  }
+
+  .image-info--hero {
+    right: .65rem;
+    bottom: .65rem;
+  }
+
+  .story-section {
+    min-height: 0;
+    padding: clamp(4rem, 16vw, 6rem) 1.1rem;
+  }
+
+  .story-section>h2 {
+    font-size: clamp(2.2rem, 11vw, 3.6rem);
+  }
+
+  .story-section>p:first-of-type {
+    font-size: 1.12rem;
+  }
+
+  .process-line,
+  .output-strip,
+  .closing-statement,
+  .participation-panel {
+    padding: 1.2rem;
+  }
+
+  .lazy-embed__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .lazy-embed__actions>* {
+    width: 100%;
+    text-align: center;
+  }
+
+  .embedded-application {
+    min-height: 72svh;
+  }
+
+  .source-rail {
+    grid-auto-columns: 82%;
+    gap: .9rem;
+  }
+
+  .legal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-grid>div:last-child {
+    grid-column: auto;
+  }
+
+  .story-progress {
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: .3rem;
+    transform: none;
+    background: var(--line);
+  }
+
+  .story-progress ol {
+    display: none;
+  }
+
+  .story-progress__line {
+    position: static;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+
+  .story-progress__fill {
+    width: var(--story-progress, 0%);
+    height: 100%;
+  }
+}
+
+/* ==========================================================
+   15 — BARRIEREFREIHEIT UND REDUZIERTE BEWEGUNG
+   ========================================================== */
+
+:focus-visible {
+  outline: 3px solid #f2b84b;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
