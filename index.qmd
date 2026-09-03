@@ -275,12 +275,10 @@ Interaktive Anwendung öffnen
 ```
 
 ::::::: {#modelling .story-section}
-## Aus verknüpften Informationen wird Wissen
+## Wie aus Archivquellen historische Erkenntnisse entstehen
 
 Die Informationen werden nicht nur gesammelt, sondern miteinander
-verknüpft.
-
-Dadurch werden Zusammenhänge sichtbar, die in den einzelnen
+verknüpft. Dadurch werden Zusammenhänge sichtbar, die in den einzelnen
 Schulkatalogen verborgen bleiben.
 
 Aus hunderten einzelner Beobachtungen wächst Schritt für Schritt eine
@@ -289,29 +287,20 @@ sondern auch von anderen weiter erforscht, ergänzt und genutzt werden
 kann.
 
 ::: process-line
-**Historische Quelle** → **Daten** → **Information** → **Historisches
-Wissen**
+**HISTORISCHE QUELLE → DATEN ERFASSEN → STRUKTURIEREN → ANREICHERN → ANALYSIEREN → EINORDNEN**
 :::
 
-Die 1209 Seiten der historischen Schulkataloge von 1893-1903 des ersten
-deutschsparchigen Mädchengymnasiums bilden die Quelle dieser
-Untersuchung. Historische Quellen dokumentieren vergangene Ereignisse,
-Personen oder Zustände. Jede Seite eines Schulkatalogs enthält den
-handschriftlichen Eintrag zu einer bestimmten Schülerin.
+Die 1209 Seiten der historischen Schulkataloge von 1893–1903 des ersten deutschsprachigen Mädchengymnasiums bilden die Grundlage dieser Untersuchung. Jede Seite enthält handschriftliche Einträge zu einer bestimmten Schülerin.
 
-Durch Transkription, Normalisierung, und Harmonisierung werden sie zu
-strukturierten Daten, die in einer Tabelle eingetragen sind. Die
-Kurztexte „Rio de Janeiro“, „1884“ und „evangelisch“ sind zunächst nur
-einzelne Daten.
+Durch die Transkription werden diese Angaben zunächst les- und bearbeitbar gemacht. Beim Strukturieren, Normalisieren und Harmonisieren werden sie so aufbereitet, dass gleichartige Angaben gemeinsam ausgewertet werden können.
 
-Informationen entstehen, wenn Daten in einen Zusammenhang gebracht und
-einem Objekt zugeordnet werden. Sie beschreiben nun Irmgard Nocken: Sie
-wurde 1884 in Rio de Janeiro geboren und war evangelisch.
+Dabei werden bereits Forschungsentscheidungen getroffen: Welche Angaben werden erfasst? Wie werden sie gegliedert? Welche Schreibweisen werden vereinheitlicht? Welche Kategorien werden gebildet? Die Forschungsdaten sind deshalb keine neutralen Abbilder der Quellen, sondern das Ergebnis nachvollziehbarer Bearbeitungsschritte.
 
-Historisches Wissen entsteht, wenn Informationen miteinander verknüpft,
-verglichen und interpretiert werden. So zeigt uns der Vergleich aller
-Schülerinnen, aus welchen Regionen sie kamen, in welchen Straßen sie
-wohnten oder welche Bildungswege sie einschlugen.
+Beim Anreichern werden weitere Informationen ergänzt und miteinander verknüpft – etwa zu Personen, Orten, Berufen oder anderen historischen Quellen und Datenbanken.
+
+Durch Analyse und Vergleich werden schließlich Muster sichtbar: Woher kamen die Schülerinnen? Wo wohnten sie? Welche Gemeinsamkeiten oder Unterschiede zeigen sich?
+
+Doch ein Muster ist noch keine historische Erklärung. Erst durch die Rückkehr zu den Quellen, durch weitere Recherchen und die Einordnung in den historischen Kontext lässt sich verstehen, was hinter einer Beobachtung steckt.
 
 ::::: {.callout-note .callout-method collapse="true"}
 ## Historische Spurensuche
@@ -367,7 +356,7 @@ stimmen – oder doch? <br>
 
 Des Rätsels Lösung: Bis 1907 war es üblich, daß die Schuldirektoren mit
 ihren Familien in der Schule wohnten. Die Schülerin am Mädchengymnasium
-war die Tochter eines Schuldirektors in Favoriten.
+war also die Tochter eines Schuldirektors in Favoriten.
 :::::
 :::::::
 
@@ -1125,12 +1114,11 @@ Die Listen der Schülerinnen mit Namen und Namensvarianten, Geburtsdaten, Geburt
 
 #### <strong>Oder kommen Sie einfach vorbei!</strong>
 
-Sie möchten das Projekt kennenlernen oder über eine Rechercheidee sprechen? Das Projektteam trifft sich regelmäßig im Café Prückel in Wien. 
+Sie möchten das Projekt kennenlernen oder über eine Rechercheidee sprechen? Das Projektteam trifft sich regelmäßig an einem öffentlich gut erreichbaren Ort in Wien. 
 Interessierte sind herzlich willkommen – Vorkenntnisse sind nicht erforderlich.
 
-Wann: November bis Juni, jeweils am ersten Mittwoch im Monat um 18:00 Uhr 
-Wo: Café Prückel, Stubenring 24, 1010 Wien (U3 Stubentor, Straßenbahn: 1, 2)  
-Die Tischreservierung lautet auf: „Mädchengymnasium“  
+Wann:  (nach aktuellem Plan) November bis Juni, jeweils am ersten Mittwoch im Monat um 18:00 Uhr 
+Wo: Ort wird je nach Anzahl der angemeldeten TeilnehmerInnen vereinbart. Schreiben Sie uns Ihre Daten (Name, eMail, Betreff: Treffen) und Sie werden spätestens eine Woche vor dem geplanten Termin verständigt.
 
 Wir freuen uns auf Sie!
 

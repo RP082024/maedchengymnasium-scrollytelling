@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Sie waren die Ersten. Mädchengymnasium (Wien, 1893-1903)"
+  search: false
+  navbar: false
+  description: "422 Schülerinnen des ersten deutschsprachigen Mädchengymnasiums in Wien, 1893–1903 – historische Archivquellen, Datenanalyse, Biografien und Open Science."
+  image: "images/hero.jpg"
+
+format:
+  html:
+    theme: cosmo
+    page-layout: full
+    toc: false
+    smooth-scroll: true
+    css: styles.css
+    lightbox: true
+    code-fold: true
+    anchor-sections: false
+
+execute:
+  freeze: auto
