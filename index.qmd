@@ -216,7 +216,7 @@ einer Datenbank gespeichert werden. So können die Informationen weiter
 verarbeitet und schließlich analysiert werden.
 
 | Historischer Eintrag | Strukturierte Information |
-|------------------------------|------------------------------------------|
+|----|----|
 | Geburtsort | Verknüpfung mit Normdaten (GeoNames, TGN), Geo-Koordinaten |
 | Namen | Verknüpfung mit Normdaten (GND, Wikidata) und biographischen Datenbanken |
 | Muttersprache | harmonisierte Bezeichnungen (böhmisch -\> tschechisch) |
